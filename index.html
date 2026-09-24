@@ -1061,6 +1061,157 @@ h1,h2,h3,h4,.quote{text-wrap:balance;word-break:auto-phrase}
 }
 .fv-memo .tx span{white-space:nowrap}
 @media (min-width:1024px){.fv-avatar{left:-20%;top:-2%;width:40%}.fv-panels{margin-left:6%}.l-studio{left:22%}}
+
+/* ===== r9: Q2 3本柱 ===== */
+.pillars{margin-top:16px;display:grid;gap:10px;counter-reset:pl}
+.pillars li{position:relative;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;padding:14px 16px;border-radius:16px;background:var(--paper);counter-increment:pl}
+.pillars .pi{position:relative;display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:#fff;color:var(--blue);box-shadow:inset 0 0 0 1px rgba(35,96,245,.25)}
+.pillars .pi svg{width:24px;height:24px}
+.pillars .pi::after{content:counter(pl);position:absolute;top:-6px;left:-6px;display:grid;place-items:center;width:20px;height:20px;border-radius:6px;background:var(--blue);color:#fff;font-family:var(--ff-en);font-size:11px;font-weight:800}
+.pillars h4{font-size:17px;font-weight:900;line-height:1.45}
+.pillars h4 small{font-size:13px;font-weight:700;color:var(--blue)}
+.pillars p{margin-top:4px;font-size:14px;line-height:1.7;color:var(--ink-2)}
+.pillars p::before{content:"例：";font-weight:700;color:var(--muted)}
+
+/* ===== r9: 講師 ===== */
+ul.t-career{margin-top:8px;display:grid;gap:4px}
+ul.t-career li{position:relative;padding-left:16px;font-size:15px;font-weight:700;color:var(--ink);line-height:1.55}
+ul.t-career li::before{content:"";position:absolute;left:0;top:.55em;width:7px;height:7px;border-radius:2px;background:var(--blue)}
+.t-subs{grid-column:1/-1;display:grid;gap:10px;margin-top:2px}
+@media (min-width:768px){.t-subs{grid-template-columns:1fr 1fr}}
+.t-sub{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;padding:12px 14px;border-radius:14px;background:var(--paper);box-shadow:inset 0 0 0 1px var(--line)}
+.t-ini{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--blue);color:#fff;font-family:var(--ff-en);font-weight:800;font-size:16px}
+.t-ini.u{background:var(--ink)}
+.t-sub h4{font-size:15px;font-weight:900;line-height:1.4}
+.t-sub p{margin-top:2px;font-size:14px;line-height:1.7;color:var(--ink-2)}
+
+/* ===== r9: 開校キャンペーン ===== */
+.price{background:linear-gradient(180deg,var(--paper) 0%,#FFF8E6 60%,var(--paper) 100%)}
+.fee.camp{background:#FFFCF3;color:var(--ink);box-shadow:0 0 0 2px #FFD76A,0 24px 50px -30px rgba(227,165,31,.55);overflow:visible;padding-top:clamp(44px,5vw,56px)}
+.fee.camp::after{display:none}
+.fee.camp :focus-visible{outline-color:var(--blue)}
+.ribbon{position:absolute;left:clamp(18px,3vw,36px);top:-18px;margin:0;animation:wiggle 3.2s ease-in-out 1.2s infinite;transform-origin:50% 100%}
+.ribbon span{position:relative;display:inline-block;white-space:nowrap;padding:9px 18px 9px 16px;border-radius:12px;background:var(--red-badge);color:#fff;font-size:15px;font-weight:900;letter-spacing:.04em;box-shadow:0 5px 0 #9E1B15,0 12px 24px -10px rgba(212,42,34,.6)}
+.ribbon span::before{content:"★";margin-right:6px;color:#FFE08A}
+@keyframes wiggle{0%,86%,100%{transform:rotate(-2deg)}90%{transform:rotate(3deg)}94%{transform:rotate(-4deg)}97%{transform:rotate(1deg)}}
+.limit{position:absolute;right:clamp(18px,3vw,36px);top:16px;margin:0;padding:4px 12px;border-radius:999px;background:var(--yellow);font-size:14px;font-weight:700;color:var(--ink)}
+.limit b{font-weight:900;margin-right:2px}
+.camp .fee-main{align-items:center;gap:8px 16px;border-bottom:1px dashed rgba(13,19,33,.18)}
+.camp .fee-main .lbl{color:var(--ink-2);font-size:15px}
+.camp .fee-main .lbl small{font-size:13px;font-weight:700;color:var(--muted);margin-left:4px}
+.was{margin:0;display:inline-flex;align-items:baseline;gap:6px;font-size:14px;font-weight:700;color:var(--muted)}
+.was s{position:relative;text-decoration:none;font-size:22px;font-weight:700;color:var(--muted)}
+.was s .en{font-family:var(--ff-en);font-weight:800}
+.was s::after{content:"";position:absolute;left:-4px;right:-4px;top:52%;height:3px;border-radius:3px;background:var(--red-badge);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+.camp.strike .was s::after{transform:scaleX(1)}
+.camp .to{width:24px;height:24px;color:var(--red-badge)}
+.now{margin:0;display:inline-flex;align-items:baseline;gap:4px}
+.camp .fee-main .num{font-size:clamp(56px,7vw,84px);color:var(--red-badge);font-variant-numeric:tabular-nums}
+.camp .fee-main .yen{color:var(--red-badge)}
+.now .mo{font-size:18px;font-weight:900;color:var(--ink)}
+.camp.done .now .num{animation:popPrice .5s var(--ease-spring)}
+@keyframes popPrice{50%{transform:scale(1.06)}}
+.seats{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;padding:14px 0;border-bottom:1px dashed rgba(13,19,33,.18)}
+.seats-dots{display:inline-grid;grid-template-columns:repeat(10,14px);gap:5px}
+.seats-dots i{width:14px;height:14px;border-radius:4px;background:#fff;box-shadow:inset 0 0 0 2px #F0B429;opacity:0;transform:scale(.4);transition:opacity .3s,transform .4s var(--ease-spring);transition-delay:calc(var(--i) * 60ms + .3s)}
+.camp.in .seats-dots i{opacity:1;transform:none}
+.seats-dots i:nth-child(-n+10){background:linear-gradient(#FFE08A,#FFC83D)}
+.seats-txt{font-size:14px;font-weight:700;color:var(--ink-2)}
+.camp .fee-rows div{border-bottom:1px solid rgba(13,19,33,.1)}
+.camp .fee-rows div:last-child{border-bottom:0}
+.camp .fee-rows dd.note{color:var(--ink-2)}
+.price-cta{margin-top:clamp(28px,4vw,44px);display:grid;justify-items:center;gap:10px}
+.price-cta .down{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--yellow);color:var(--ink);animation:bounceDown 1.6s ease-in-out infinite}
+.price-cta .down svg{width:22px;height:22px}
+@keyframes bounceDown{0%,100%{transform:translateY(-4px)}50%{transform:translateY(6px)}}
+@media (max-width:767px){
+  .fee.camp{padding:40px 18px 18px}
+  .ribbon{left:14px;top:-16px}
+  .ribbon span{font-size:14px;padding:7px 14px}
+  .limit{top:12px;right:12px;font-size:13px;padding:2px 10px}
+  .camp .fee-main{padding-top:6px}
+  .camp .fee-main .num{font-size:54px}
+  .seats{padding:12px 0}
+  .seats-dots{grid-template-columns:repeat(10,12px);gap:4px}
+  .seats-dots i{width:12px;height:12px}
+  .price-cta{margin-top:22px}
+  .price-cta .btn{width:100%}
+}
+
+/* ===== r9: チャット演出 ===== */
+.chat{grid-template-columns:minmax(0,1fr)}
+.chat .chat-lbl{grid-row:1}.chat .you{grid-row:2}
+.chat .typing,.chat .ai{grid-row:3;grid-column:1}
+.chat .you{transform-origin:100% 100%}
+.chat .ai,.chat .typing{transform-origin:0 100%}
+.chat.go .m.you,.chat.go .m.ai,.chat.go .typing{opacity:0}
+.chat .typing{display:inline-flex;align-self:start;justify-self:start;gap:4px;padding:12px 14px;background:var(--night-2);box-shadow:inset 0 0 0 1px var(--night-line);border-radius:14px;border-bottom-left-radius:4px;max-width:none}
+.chat.s1 .m.you{animation:popR .6s cubic-bezier(.34,1.56,.64,1) both}
+.chat.s2 .typing{animation:popL .5s cubic-bezier(.34,1.56,.64,1) both}
+.chat.s3 .typing{animation:popOut .25s ease-in both}
+.chat.s3 .m.ai{animation:popL .6s .12s cubic-bezier(.34,1.56,.64,1) both}
+@keyframes popR{0%{opacity:0;transform:translateX(36px) scale(.55)}60%{opacity:1}100%{opacity:1;transform:none}}
+@keyframes popL{0%{opacity:0;transform:translateX(-36px) scale(.55)}60%{opacity:1}100%{opacity:1;transform:none}}
+@keyframes popOut{to{opacity:0;transform:scale(.6)}}
+@keyframes typ{0%,60%,100%{opacity:.3;transform:none}30%{opacity:1;transform:translateY(-3px)}}
+
+/* ===== r9: 最初の3か月 ===== */
+.months{background:var(--paper)}
+.mtable{position:relative}
+.mtabs{display:none}
+.mcols{display:grid;grid-template-columns:220px repeat(3,1fr);gap:0 14px;padding:0 0 12px}
+.mcol{display:flex;align-items:center;gap:10px;padding:0 6px;font-size:16px;font-weight:900}
+.mcol small{font-size:12px;font-weight:700;color:var(--muted);display:block}
+.fi{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;flex:none;color:#fff}
+.fi svg{width:22px;height:22px}
+.fi-g{background:var(--blue)}.fi-p{background:var(--ink)}.fi-a{background:#F0A21E}
+.mrow{display:grid;grid-template-columns:220px 1fr;gap:14px;padding:14px;border-radius:22px;background:var(--card);box-shadow:0 0 0 1px var(--line);margin-top:12px}
+.mhead{display:grid;align-content:center;gap:2px;padding:6px 8px}
+.mno{font-family:var(--ff-en);font-weight:800;font-size:13px;letter-spacing:.1em;color:var(--blue)}
+.mhead h3{font-size:22px;font-weight:900;line-height:1.35}
+.mprog{margin-top:10px;height:8px;border-radius:8px;background:var(--paper-2);overflow:hidden}
+.mprog i{display:block;height:100%;border-radius:8px;background:linear-gradient(90deg,var(--blue),var(--sky));transform-origin:left;transform:scaleX(0);transition:transform 1.2s var(--ease) .3s}
+.mrow.in .mprog i{transform:scaleX(var(--p))}
+.mcells{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.mcell{padding:14px 16px;border-radius:16px;background:var(--paper)}
+.mcell p{font-size:15px;line-height:1.75;color:var(--ink)}
+.mfield{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+.mrow:nth-of-type(3) .mhead h3{color:var(--blue-deep)}
+@media (max-width:1023px) and (min-width:768px){.mcols,.mrow{grid-template-columns:150px 1fr}.mcol{font-size:14px}.mcol .fi{width:32px;height:32px}}
+@media (max-width:767px){
+  .mcols{display:none}
+  .mtabs{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;padding:4px;border-radius:14px;background:var(--card);box-shadow:inset 0 0 0 1px var(--line)}
+  .mtab{min-height:44px;border:0;border-radius:10px;background:none;font-size:15px;font-weight:700;color:var(--muted);cursor:pointer}
+  .mtab .en{font-family:var(--ff-en);font-weight:800;margin-right:1px}
+  .mtab[aria-selected="true"]{background:var(--ink);color:#fff}
+  .mrow{grid-template-columns:1fr;gap:10px;padding:14px;margin-top:10px;border-radius:20px}
+  .mrow[hidden]{display:none}
+  .mhead{padding:0;grid-template-columns:auto 1fr;align-items:center;column-gap:10px}
+  .mhead h3{font-size:18px}
+  .mprog{grid-column:1/-1;margin-top:6px;height:6px}
+  .mcells{grid-template-columns:1fr;gap:8px}
+  .mcell{display:grid;grid-template-columns:auto 1fr;gap:0 10px;align-items:start;padding:10px 12px;border-radius:14px}
+  .mfield{display:contents;position:static;width:auto;height:auto;clip:auto;white-space:normal;overflow:visible}
+  .mfield>span:last-child{grid-column:2;font-size:13px;font-weight:700;color:var(--muted);line-height:1.4}
+  .mfield>span:last-child small{font-size:12px}
+  .mcell .fi{width:34px;height:34px;border-radius:10px;grid-row:1/span 2}
+  .mcell .fi svg{width:19px;height:19px}
+  .mcell p{grid-column:2;font-size:14px;line-height:1.65}
+  .pillars{gap:8px;margin-top:12px}
+  .pillars li{padding:10px 12px;gap:12px}
+  .pillars .pi{width:38px;height:38px}
+  .pillars .pi svg{width:20px;height:20px}
+  .pillars h4{font-size:16px}
+  .t-sub{padding:10px 12px}
+  .t-ini{width:34px;height:34px;font-size:14px}
+}
+@media (prefers-reduced-motion:reduce){
+  .ribbon,.price-cta .down,.chat .typing i{animation:none}
+  .seats-dots i{opacity:1;transform:none}
+  .was s::after{transform:scaleX(1)}
+  .chat.go .m.you,.chat.go .m.ai{opacity:1;transform:none;animation:none}.chat .typing{display:none}
+  .mprog i{transform:scaleX(var(--p))}
+}
 </style>
 </head>
 <body>
@@ -1208,10 +1359,6 @@ h1,h2,h3,h4,.quote{text-wrap:balance;word-break:auto-phrase}
           <p class="no">01</p>
           <h3><span class="nb">自分のアイデアを、</span><span class="nb">ゲームにする</span></h3>
           <p class="desc">決められた手順をなぞるだけではなく、「こうしたら面白そう」を自分で考え、<span class="nb">Roblox Studioで</span>形にします。</p>
-          <ul class="sample-meta">
-            <li><b>SAMPLE</b><span>完成サンプル：<span class="nb">アスレチック（オビー）</span></span></li>
-            <li><b>TOOL</b><span>Roblox Studio</span></li>
-          </ul>
         </div>
         <div class="switch" id="switch">
           <div class="switch-tabs" role="group" aria-label="表示の切り替え">
@@ -1236,9 +1383,10 @@ h1,h2,h3,h4,.quote{text-wrap:balance;word-break:auto-phrase}
           <h3><span class="nb">AIを、</span><span class="nb">考えるための</span><span class="nb">相棒にする</span></h3>
         </div>
         <p class="desc">AIは、アイデアを広げたり、分からないことを相談したりする<span class="nb">相棒。</span>答えをそのまま使うのではなく、自分で考え、試しながらゲームをつくります。</p>
-        <div class="chat" aria-label="AIとのやりとりの例">
+        <div class="chat" id="chat" aria-label="AIとのやりとりの例">
           <p class="chat-lbl">やりとりの例（イメージ）</p>
           <p class="m you"><b aria-hidden="true">YOU</b><span class="nb">思った通りに動かない。</span><span class="nb">どこを確認すればいい？</span></p>
+          <p class="m typing" aria-hidden="true"><i></i><i></i><i></i></p>
           <p class="m ai"><b aria-hidden="true">AI</b><span class="nb">まず、条件と数値を</span><span class="nb">順番に確認してみよう。</span></p>
         </div>
         <div class="roles">
@@ -1324,6 +1472,35 @@ h1,h2,h3,h4,.quote{text-wrap:balance;word-break:auto-phrase}
   </div>
 </section>
 
+<!-- FIRST 3 MONTHS -->
+<section class="sec months" id="months" aria-labelledby="months-title">
+  <div class="wrap">
+    <div class="sec-head split">
+      <div>
+        <p class="eyebrow rv">First 3 months</p>
+        <h2 class="h2 rv" style="--d:.08s" id="months-title"><span class="nb">最初の3か月で、</span><span class="nb">ここまで学びます。</span></h2>
+      </div>
+      <p class="lead rv" style="--d:.16s">ゲーム制作・プログラミング・AIを別々に学ぶのではなく、ひとつのゲームをつくりながら、<span class="nb">3つの力を少しずつ</span><span class="nb">身につけます。</span></p>
+    </div>
+    <div class="mtable" id="mtable">
+      <div class="mtabs" aria-label="月を選ぶ"><button type="button" class="mtab" id="mtab0" data-i="0"><span class="en">1</span>か月目</button><button type="button" class="mtab" id="mtab1" data-i="1"><span class="en">2</span>か月目</button><button type="button" class="mtab" id="mtab2" data-i="2"><span class="en">3</span>か月目</button></div>
+      <div class="mcols rv" aria-hidden="true"><div class="mcol mcol-0"></div><div class="mcol"><span class="fi fi-g"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 20 7.5v9L12 21l-8-4.5v-9Z"/><path d="M4 7.5 12 12l8-4.5M12 12v9"/></svg></span><span>ゲーム制作<small>（Roblox Studio）</small></span></div><div class="mcol"><span class="fi fi-p"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></svg></span><span>プログラミング</span></div><div class="mcol"><span class="fi fi-a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="8" width="14" height="11" rx="3"/><path d="M12 4v4M9.5 13h.01M14.5 13h.01M9.5 16.5h5"/><path d="M2.5 12.5v3M21.5 12.5v3"/></svg></span><span>AI</span></div></div>
+      <section class="mrow rv" id="mpanel0" style="--d:0.00s" aria-label="1か月目：基本を覚える">
+        <div class="mhead"><p class="mno">1か月目</p><h3>基本を覚える</h3><span class="mprog" aria-hidden="true"><i style="--p:0.333"></i></span></div>
+        <ul class="mcells"><li class="mcell"><span class="mfield"><span class="fi fi-g"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 20 7.5v9L12 21l-8-4.5v-9Z"/><path d="M4 7.5 12 12l8-4.5M12 12v9"/></svg></span><span>ゲーム制作<small>（Roblox Studio）</small></span></span><p><span class="nb">パーツを置く・動かす・</span><span class="nb">色を変える。</span><span class="nb">迷路やアスレチックをつくる</span></p></li><li class="mcell"><span class="mfield"><span class="fi fi-p"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></svg></span><span>プログラミング</span></span><p><span class="nb">「数字や設定を変えると</span><span class="nb">動きが変わる」ことを</span><span class="nb">体験する</span></p></li><li class="mcell"><span class="mfield"><span class="fi fi-a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="8" width="14" height="11" rx="3"/><path d="M12 4v4M9.5 13h.01M14.5 13h.01M9.5 16.5h5"/><path d="M2.5 12.5v3M21.5 12.5v3"/></svg></span><span>AI</span></span><p><span class="nb">ゲームに使う画像や</span><span class="nb">アイデアを</span><span class="nb">AIと一緒に考える</span></p></li></ul>
+      </section>
+      <section class="mrow rv" id="mpanel1" style="--d:0.14s" aria-label="2か月目：自分らしくする">
+        <div class="mhead"><p class="mno">2か月目</p><h3>自分らしくする</h3><span class="mprog" aria-hidden="true"><i style="--p:0.667"></i></span></div>
+        <ul class="mcells"><li class="mcell"><span class="mfield"><span class="fi fi-g"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 20 7.5v9L12 21l-8-4.5v-9Z"/><path d="M4 7.5 12 12l8-4.5M12 12v9"/></svg></span><span>ゲーム制作<small>（Roblox Studio）</small></span></span><p><span class="nb">地形やキャラクターを使って、</span><span class="nb">自分のワールドをつくる</span></p></li><li class="mcell"><span class="mfield"><span class="fi fi-p"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></svg></span><span>プログラミング</span></span><p><span class="nb">座標や動きの仕組みを使って、</span><span class="nb">ゲームに変化をつける</span></p></li><li class="mcell"><span class="mfield"><span class="fi fi-a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="8" width="14" height="11" rx="3"/><path d="M12 4v4M9.5 13h.01M14.5 13h.01M9.5 16.5h5"/><path d="M2.5 12.5v3M21.5 12.5v3"/></svg></span><span>AI</span></span><p><span class="nb">ゲームに合う</span><span class="nb">BGMや効果音の</span><span class="nb">アイデアを考える</span></p></li></ul>
+      </section>
+      <section class="mrow rv" id="mpanel2" style="--d:0.28s" aria-label="3か月目：動くゲームへ">
+        <div class="mhead"><p class="mno">3か月目</p><h3>動くゲームへ</h3><span class="mprog" aria-hidden="true"><i style="--p:1.000"></i></span></div>
+        <ul class="mcells"><li class="mcell"><span class="mfield"><span class="fi fi-g"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 20 7.5v9L12 21l-8-4.5v-9Z"/><path d="M4 7.5 12 12l8-4.5M12 12v9"/></svg></span><span>ゲーム制作<small>（Roblox Studio）</small></span></span><p><span class="nb">仕掛けを組み合わせて、</span><span class="nb">友だちが遊べる</span><span class="nb">ミニゲームをつくる</span></p></li><li class="mcell"><span class="mfield"><span class="fi fi-p"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></svg></span><span>プログラミング</span></span><p><span class="nb">簡単なスクリプトを</span><span class="nb">書き換え、</span><span class="nb">仕掛けを動かす</span></p></li><li class="mcell"><span class="mfield"><span class="fi fi-a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="8" width="14" height="11" rx="3"/><path d="M12 4v4M9.5 13h.01M14.5 13h.01M9.5 16.5h5"/><path d="M2.5 12.5v3M21.5 12.5v3"/></svg></span><span>AI</span></span><p><span class="nb">うまくいかないところを</span><span class="nb">AIに相談し、</span><span class="nb">自分で直して試す</span></p></li></ul>
+      </section>
+    </div>
+  </div>
+</section>
+
 <!-- 05 LEVEL -->
 <section class="sec level" id="level" aria-labelledby="level-title">
   <div class="wrap">
@@ -1381,32 +1558,31 @@ h1,h2,h3,h4,.quote{text-wrap:balance;word-break:auto-phrase}
             <div class="t-photo" role="img" aria-label="池田先生の写真"></div>
             <div class="t-body">
               <h4>池田先生<small>代表・教室長</small></h4>
-              <p class="t-career"><span class="nb">DELL・IBMなど</span><span class="nb">外資系IT企業で</span><span class="nb">15年以上</span></p>
+              <ul class="t-career"><li><span class="nb">20年以上の</span><span class="nb">エンジニア経験</span></li><li><span class="nb">子ども向け</span><span class="nb">プログラミング教育</span> <span class="nb">9年以上</span></li></ul>
             </div>
             <p class="t-quote"><span class="nb">「専門的な内容を</span><span class="nb">そのまま教えるのではなく、</span><span class="nb">子どもが理解できる形に</span><span class="nb">かみ砕いて伝えることを</span><span class="nb">大切に指導しています。」</span></p>
+          </div>
+          <div class="t-subs">
+            <div class="t-sub"><span class="t-ini" aria-hidden="true">N</span><div><h4>N先生</h4><p><span class="nb">プログラミングが</span><span class="nb">得意な現役東大生。</span><span class="nb">子どもたちへ</span><span class="nb">指導する際も、</span><span class="nb">プログラミングの</span><span class="nb">楽しさを</span><span class="nb">伝えられるよう</span><span class="nb">心がけている。</span></p></div></div>
+            <div class="t-sub"><span class="t-ini u" aria-hidden="true">U</span><div><h4>U先生</h4><p><span class="nb">AIやRobloxが</span><span class="nb">好きな</span><span class="nb">現役理科大生。</span><span class="nb">YouTubeの</span><span class="nb">活動などを通して、</span><span class="nb">難しい話を</span><span class="nb">わかりやすく</span><span class="nb">説明する技術を</span><span class="nb">磨いている。</span></p></div></div>
           </div>
         </div>
       </article>
 
       <article class="pcard rv" style="--d:.08s">
-        <div class="q"><b>Q2</b><h3><span class="nb">AIを子どもに</span><span class="nb">使わせて、大丈夫？</span></h3></div>
+        <div class="q"><b>Q2</b><h3><span class="nb">AIを子どもに</span><span class="nb">使わせて大丈夫？</span></h3></div>
         <div class="a">
-          <p><span class="nb">教室では、</span><span class="nb">AIとネットの使い方に</span><span class="nb">ルールを決めています。</span></p>
-          <ul class="rules" style="margin-top:16px">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.4 8.2 8 9 4.6-.8 8-4.5 8-9V6Z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg><span><span class="nb">名前や学校名などの</span><span class="nb">個人情報は、</span><span class="nb">AIに入力しない。</span></span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.4 8.2 8 9 4.6-.8 8-4.5 8-9V6Z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg><span><span class="nb">AIを使うのは、</span><span class="nb">講師の見守りのもとで。</span></span></li>
-            
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.4 8.2 8 9 4.6-.8 8-4.5 8-9V6Z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg><span><span class="nb">Robloxのチャットや</span><span class="nb">課金の設定は、</span><span class="nb">保護者の方と</span><span class="nb">一緒に確認する。</span></span></li>
-          </ul>
-          <div class="sec-learn">
-            <p class="sec-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>AIセキュリティも学ぶ</p>
-            <p><span class="nb">AIとネットのセキュリティ</span><span class="nb">そのものも、</span><span class="nb">授業で学びます。</span><span class="nb">個人情報の扱い、</span><span class="nb">パスワード、</span><span class="nb">怪しいリンクの</span><span class="nb">見分け方など。</span><span class="nb">企業向けセキュリティに</span><span class="nb">携わってきた</span><span class="nb">池田先生が教えます。</span></p>
-          </div>
+          <p><span class="nb">AIは、正しい使い方と</span><span class="nb">あわせて学びます。</span></p>
+          <ol class="pillars">
+            <li><span class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4Z"/><path d="M8 9h8M8 12h5"/></svg></span><div><h4><span class="nb">適切な指示出し</span><small>（プロンプティング）</small></h4><p><span class="nb">目的や条件を</span><span class="nb">具体的に伝えて、</span><span class="nb">AIから役立つ答えを</span><span class="nb">引き出す</span></p></div></li>
+            <li><span class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v16M5 20h14"/><path d="M5 8h14"/><path d="m5 8-2.5 6a2.5 2.5 0 0 0 5 0Z"/><path d="m19 8-2.5 6a2.5 2.5 0 0 0 5 0Z"/></svg></span><div><h4>倫理・法令の理解</h4><p><span class="nb">他の人がつくった</span><span class="nb">作品や画像を、</span><span class="nb">勝手に使わない</span></p></div></li>
+            <li><span class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4.5 6v6c0 4.5 3.2 8.2 7.5 9 4.3-.8 7.5-4.5 7.5-9V6Z"/><rect x="9" y="11" width="6" height="5" rx="1"/><path d="M10.5 11V9.5a1.5 1.5 0 0 1 3 0V11"/></svg></span><div><h4>情報リスクの回避</h4><p><span class="nb">名前や学校名などの</span><span class="nb">個人情報は、</span><span class="nb">AIに入力しない</span></p></div></li>
+          </ol>
         </div>
       </article>
 
       <article class="pcard rv">
-        <div class="q"><b>Q3</b><h3><span class="nb">遊んでいるだけに、</span><span class="nb">ならない？</span></h3></div>
+        <div class="q"><b>Q3</b><h3><span class="nb">遊んでいるだけに</span><span class="nb">ならない？</span></h3></div>
         <div class="a">
           <p>授業は「楽しむ時間」と「学ぶ時間」にメリハリをつけて進めます。何を作り、何を学んだかはレポートで確認できるので、授業の中身が保護者の方にも見えます。</p>
           <div class="balance">
@@ -1417,7 +1593,7 @@ h1,h2,h3,h4,.quote{text-wrap:balance;word-break:auto-phrase}
       </article>
 
       <article class="pcard rv" style="--d:.08s">
-        <div class="q"><b>Q4</b><h3>初心者でも、大丈夫？</h3></div>
+        <div class="q"><b>Q4</b><h3>初心者でも大丈夫？</h3></div>
         <div class="a">
           <p>大丈夫です。いきなりコードを書くことはしません。できることを一つずつ増やしていきます。</p>
           <ol class="path">
@@ -1439,19 +1615,26 @@ h1,h2,h3,h4,.quote{text-wrap:balance;word-break:auto-phrase}
         <p class="eyebrow rv">Price &amp; Access</p>
         <h2 class="h2 rv" style="--d:.08s" id="price-title">料金・場所・日時</h2>
       </div>
-      <p class="lead rv" style="--d:.16s">月々の費用と、入会時の費用です。</p>
+      <p class="lead rv" style="--d:.16s"><span class="nb">今なら、</span><span class="nb">開校キャンペーン価格で</span><span class="nb">始められます。</span></p>
     </div>
 
     <div class="price-grid">
-      <div class="fee rv">
+      <div class="fee camp rv" id="camp">
+        <p class="ribbon"><span>新規開校キャンペーン！</span></p>
+        <p class="limit"><b>先着10名</b>限定</p>
         <div class="fee-main">
-          <span class="lbl">月謝</span>
-          <span class="num">6,500<span class="yen">円</span></span>
-          <span class="per">月2回・各75分</span>
+          <span class="lbl">月謝<small>（月2回・各75分）</small></span>
+          <p class="was"><span class="sr-only">通常価格</span><span aria-hidden="true">通常</span><s><span class="en">9,500</span>円</s></p>
+          <svg class="to" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+          <p class="now"><span class="sr-only">キャンペーン価格</span><span class="num"><span class="en" id="campNum" data-from="9500" data-to="6500">6,500</span><span class="yen">円</span></span><span class="mo">/月</span></p>
+        </div>
+        <div class="seats" aria-label="先着10名限定">
+          <span class="seats-dots" aria-hidden="true"><i style="--i:0"></i><i style="--i:1"></i><i style="--i:2"></i><i style="--i:3"></i><i style="--i:4"></i><i style="--i:5"></i><i style="--i:6"></i><i style="--i:7"></i><i style="--i:8"></i><i style="--i:9"></i></span>
+          <span class="seats-txt"><span class="nb">限定10名。</span><span class="nb">定員に達し次第、</span><span class="nb">終了します。</span></span>
         </div>
         <dl class="fee-rows">
           <div><dt>入会金</dt><dd>10,000<small>円</small></dd></div>
-          <div><dt>管理費</dt><dd>1,000<small>円 / 月</small></dd><dd class="note">1世帯あたりの金額です。複数コースの受講や、ご兄弟での受講でも追加はかかりません。</dd></div>
+          <div><dt>管理費</dt><dd>1,000<small>円 / 月</small></dd><dd class="note"><span class="nb">1世帯あたりの金額です。</span><span class="nb">複数コースの受講や、</span><span class="nb">ご兄弟での受講でも</span><span class="nb">追加はかかりません。</span></dd></div>
         </dl>
       </div>
 
@@ -1467,6 +1650,11 @@ h1,h2,h3,h4,.quote{text-wrap:balance;word-break:auto-phrase}
           </tbody>
         </table>
       </div>
+    </div>
+    <div class="price-cta rv">
+      <span class="down" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v15M6 13l6 6 6-6"/></svg></span>
+      <!-- CTAのhrefはLINE友だち追加URLに差し替え -->
+      <a class="btn lg" data-cta data-cta-pos="price" href="https://forms.gle/EqJn1Mq5Pw3cvJQr5" target="_blank" rel="noopener">無料体験の日程を見る<span class="arr" aria-hidden="true"><svg><use href="#arr"/></svg></span></a>
     </div>
   </div>
 </section>
@@ -1499,7 +1687,7 @@ h1,h2,h3,h4,.quote{text-wrap:balance;word-break:auto-phrase}
       <details class="rv"><summary><span class="qm">Q</span><span><span class="nb">Robloxを遊んだことが</span><span class="nb">なくても大丈夫？</span></span><span class="pm" aria-hidden="true"></span></summary><div class="ans"><p>大丈夫です。Robloxを遊んだことがなくても、Studioの基本操作から順番に進めます。</p></div></details>
       <details class="rv"><summary><span class="qm">Q</span><span><span class="nb">プログラミングが</span><span class="nb">初めてでも大丈夫？</span></span><span class="pm" aria-hidden="true"></span></summary><div class="ans"><p>大丈夫です。最初は用意された仕掛けを改造するところから始め、数字や命令を少しずつ変えながら、動きの変化を確かめていきます。</p></div></details>
       <details class="rv"><summary><span class="qm">Q</span>パソコンは必要ですか？<span class="pm" aria-hidden="true"></span></summary><div class="ans"><p>体験授業では教室で用意します。入会後の詳細は、体験時にご案内します。</p></div></details>
-      <details class="rv"><summary><span class="qm">Q</span>AIを使っても安全ですか？<span class="pm" aria-hidden="true"></span></summary><div class="ans"><p>個人情報を入力しない、講師の見守りのもとで使う、AIの答えは動かして確かめる、といったルールを決めて使います。Robloxのチャットや課金の設定は、保護者の方と一緒に確認します。</p></div></details>
+      <details class="rv"><summary><span class="qm">Q</span>AIを使っても安全ですか？<span class="pm" aria-hidden="true"></span></summary><div class="ans"><p><span class="nb">AIは「適切な指示出し」</span><span class="nb">「倫理・法令の理解」</span><span class="nb">「情報リスクの回避」の</span><span class="nb">3つとあわせて学びます。</span><span class="nb">個人情報を入力しない、</span><span class="nb">他の人の作品を勝手に使わないなど、</span><span class="nb">使い方のルールを</span><span class="nb">身につけながら使います。</span></p></div></details>
     </div>
   </div>
 </section>
@@ -1605,7 +1793,7 @@ h1,h2,h3,h4,.quote{text-wrap:balance;word-break:auto-phrase}
   let lastY = window.scrollY, ticking = false;
   /* 固定CTA：ページ内のCTA（ヒーロー／体験授業／最後）が見えている間は隠す */
   const ctaSeen = new Set();
-  [".hero-cta", ".trial-cta", ".final-card"].forEach((sel) => {
+  [".hero-cta", ".trial-cta", ".price-cta", ".final-card"].forEach((sel) => {
     const el = $(sel);
     onVisible(el, (v) => { v ? ctaSeen.add(sel) : ctaSeen.delete(sel); update(); }, { threshold: 0 });
   });
@@ -1830,6 +2018,89 @@ h1,h2,h3,h4,.quote{text-wrap:balance;word-break:auto-phrase}
       }
     });
   });
+
+  /* ---- Chat: YOU → 入力中… → AI（見えたら1回だけ） ---- */
+  const chat = $("#chat");
+  if (chat) {
+    if (RM || !("IntersectionObserver" in window)) chat.classList.add("s1", "s3");
+    else {
+      chat.classList.add("go");
+      const io2 = new IntersectionObserver((es) => {
+        if (!es[0].isIntersecting) return;
+        io2.disconnect();
+        setTimeout(() => chat.classList.add("s1"), 200);
+        setTimeout(() => chat.classList.add("s2"), 850);
+        setTimeout(() => chat.classList.add("s3"), 2200);
+      }, { threshold: 0.4 });
+      io2.observe(chat);
+    }
+  }
+
+  /* ---- Campaign: 取り消し線 → 価格カウント ---- */
+  const camp = $("#camp"), campNum = $("#campNum");
+  if (camp && campNum) {
+    const fmt = (n) => n.toLocaleString("ja-JP");
+    const to = +campNum.dataset.to, from = +campNum.dataset.from;
+    if (RM || !("IntersectionObserver" in window)) camp.classList.add("strike");
+    else {
+      campNum.textContent = fmt(from);
+      const io3 = new IntersectionObserver((es) => {
+        if (!es[0].isIntersecting) return;
+        io3.disconnect();
+        setTimeout(() => camp.classList.add("strike"), 500);
+        setTimeout(() => {
+          const t0 = performance.now(), dur = 900;
+          const step = (t) => {
+            const k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+            campNum.textContent = fmt(Math.round((from + (to - from) * e) / 10) * 10);
+            if (k < 1) requestAnimationFrame(step); else camp.classList.add("done");
+          };
+          requestAnimationFrame(step);
+        }, 1100);
+      }, { threshold: 0.4 });
+      io3.observe(camp);
+    }
+  }
+
+  /* ---- 3か月：スマホはタブ切り替え（ARIA対応）、PCは表 ---- */
+  const mt = $("#mtable");
+  if (mt) {
+    const tabs = $$(".mtab", mt), panels = $$(".mrow", mt), tl = $(".mtabs", mt);
+    const mq = window.matchMedia("(max-width: 767px)");
+    let cur = 0;
+    const select = (i, focus) => {
+      cur = i;
+      tabs.forEach((t, k) => { t.setAttribute("aria-selected", String(k === i)); t.tabIndex = k === i ? 0 : -1; });
+      panels.forEach((p, k) => { p.hidden = mq.matches && k !== i; });
+      if (focus) tabs[i].focus();
+    };
+    const setup = () => {
+      if (mq.matches) {
+        tl.setAttribute("role", "tablist");
+        tabs.forEach((t, k) => { t.setAttribute("role", "tab"); t.setAttribute("aria-controls", "mpanel" + k); });
+        panels.forEach((p, k) => { p.setAttribute("role", "tabpanel"); p.setAttribute("aria-labelledby", "mtab" + k); p.removeAttribute("aria-label"); p.classList.add("in"); });
+        select(cur);
+      } else {
+        tl.removeAttribute("role");
+        tabs.forEach((t) => { t.removeAttribute("role"); t.removeAttribute("aria-controls"); t.removeAttribute("aria-selected"); });
+        panels.forEach((p, k) => { p.removeAttribute("role"); p.removeAttribute("aria-labelledby"); p.setAttribute("aria-label", tabs[k].textContent + "：" + $("h3", p).textContent); p.hidden = false; });
+      }
+    };
+    tabs.forEach((t, k) => {
+      t.addEventListener("click", () => select(k));
+      t.addEventListener("keydown", (e) => {
+        const n = tabs.length;
+        let j = null;
+        if (e.key === "ArrowRight") j = (k + 1) % n;
+        else if (e.key === "ArrowLeft") j = (k - 1 + n) % n;
+        else if (e.key === "Home") j = 0;
+        else if (e.key === "End") j = n - 1;
+        if (j !== null) { e.preventDefault(); select(j, true); }
+      });
+    });
+    (mq.addEventListener ? mq.addEventListener("change", setup) : mq.addListener(setup));
+    setup();
+  }
 
   update();
 })();
